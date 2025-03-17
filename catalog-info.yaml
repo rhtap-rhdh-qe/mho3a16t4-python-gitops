@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mho3a16t4-python-gitops
+  description: This is GitOps manifest for mho3a16t4-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mho3a16t4-python
+    backstage.io/kubernetes-id: mho3a16t4-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mho3a16t4-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mho3a16t4-python
